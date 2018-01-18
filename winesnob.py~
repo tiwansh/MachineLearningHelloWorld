@@ -56,10 +56,10 @@ result = model_selection.cross_val_score(LogisticRegression(), X_train, Y_train,
 lr= LogisticRegression()
 lr.fit(X_train, Y_train)
 
-predictions = lr.predict(X_test)
-print "Using Logistic regression : "
-print (accuracy_score(Y_test, predictions))
-print classification_report(Y_test, predictions)
+#predictions = lr.predict(X_test)
+#print "Using Logistic regression : "
+#print (accuracy_score(Y_test, predictions))
+#print classification_report(Y_test, predictions)
 
 #Train the model
 pipeline = make_pipeline(preprocessing.StandardScaler(), RandomForestRegressor(n_estimators=100))
@@ -81,8 +81,8 @@ clf.fit(X_train, Y_train)
 pred = clf.predict(X_test)
 
 print "Using model_selection "
-print accuracy_score(Y_test, pred)
-print classification_report(Y_test, pred)
+print r2_score(Y_test, pred)
+print mean_squared_error(Y_test, pred)
 
 
 
